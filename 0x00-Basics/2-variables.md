@@ -45,3 +45,22 @@ Variable names can only start with a letter, underscore(_) or dollar sign($). Al
     let copies = 20;
     let $price = 9.99;
     
+>NOTE: Variables are case-sensitive and if a variable is made of multiple words use camel case convention
+Use meaningful and descriptive names as good practice.
+
+    meaningful and descriptive name: 
+
+    let bootcampTrainer = "Dennis";
+    let courseTought = "Web Develoment";
+    let STUDENTS = 20;
+    let students = 15;
+
+    console.log(bootcampTrainer); // Dennis
+    console.log(courseTought); // Web Development
+    console.log(STUDENTS); // 20
+    console.log(students); // 15
+
+    bad practice: These declarations may confuse the readers.
+
+    let a = "Gideon"
+    let l = "javascript"
