@@ -21,7 +21,7 @@ We use `<script> "javascript code is wriiten here " </script>` tag in the HTM fi
 ### Internal Javascript  
 Javascript code is written in the body of the HTML file. Its recommended to place the script at the end of the body to  optimize the script loading. Javacript can block page rendering if not loaded correctly.  
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@ Javascript code is written in the body of the HTML file. Its recommended to plac
 ### External Javascript  
 The scrit is written in a separate .js file then linked into HTML file. For example, main.js is a sepate file but its linked into the HTML document in the head section.  
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +62,7 @@ The scrit is written in a separate .js file then linked into HTML file. For exam
 
 main.js
 
-```
+```javascript
 console.log('Hello, world!');
 console.log('This is external JavaScript file.');
 ```
@@ -71,18 +71,18 @@ console.log('This is external JavaScript file.');
 
 1. Use defer keyword to ensure the script is loaded after the HTML is fully loaded.    
 
-```
+```javascript
 <script src="main.js" defer></script>
 ```  
 
 2. Use asnc keyword to load scripts asynchronously and run them as soon as they are downloaded. The assync keyword should be used where its absolutely needed.    
 
-```
+```javascript
 <script src="main.js" async></script>
 ```
 
 3. Put the script tag at the end of the every page before the closing body tag.  
 
-```
+```javascript
 <script src="main.js">The script closing tag is put</script>
 ```
