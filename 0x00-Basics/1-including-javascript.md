@@ -1,22 +1,11 @@
 # Introduction to Javascript  
 
 Javascript enables us to add the interactivity and dynamic functionalities to our websites.  
-It is designed for web browsers (client-side) but with Node.js environment, it can also run on server-side.   
 
-Javascript supports different programming styles including: 
-- Procedural programming 
-- Object-Oriented programming
-- Functional programming  
-
-## Where to use javacript  
-- Web development
-- Mobile App Development
-- Backend Development 
-- Game Development 
-- etc
+# 
 
 Javascript can be used internally or externally in a HTML document.
-We use `<script> "javascript code is wriiten here " </script>` tag in the HTM files.
+We use `<script> " javascript code is wriiten here " </script>` tag in the HTM files.
 
 ### Internal Javascript  
 Javascript code is written in the body of the HTML file. Its recommended to place the script at the end of the body to  optimize the script loading. Javacript can block page rendering if not loaded correctly.  
