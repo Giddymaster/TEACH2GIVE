@@ -38,5 +38,9 @@ const student = {
     },
 }
 
-student.getDetails();
+
+Object.freeze(student);
+student.surname = "Njeri"
+console.log(student)
+//student.getDetails();
 //console.log(student.getDetails());
