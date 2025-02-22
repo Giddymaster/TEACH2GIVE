@@ -1,7 +1,7 @@
 # Accessing Dom Elements
 Document Object Model(DOM) is a standard for how to get, change,add, delete and modify HTML elements.  
 
-We start by accessing document object - the HTML document then use the following methods to access DOM elements.
+We start by accessing document object - the HTML document - then use the following methods to access DOM elements.
 
 We start by HTML:
 ```html
@@ -11,12 +11,6 @@ We start by HTML:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessing Dom Elements</title>
-    <style>
-        .highlight {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <h1 id="header">Accessing Dom Elements</h1>
@@ -33,33 +27,46 @@ We start by HTML:
 </body>
 </html>
 ```
-1. document.getElementById(elementId) - Selects the `<h1>` with id="header" and changes its color to blue.
+# Methods of accessing DOM elements
+1. `document.getElementById(elementId)` - Selects the `<h1>` with id="header" and changes its color to blue.
 ```js
-function button {
     let header = document.getElementById("header");
-    header.style.color = "blue";
-    console.log("getElementById:", header.innerText);
+    console.log(header);
 ```
-2. document.getElementsByTagName(name) - Selects all `<p>` elements and increases their font size.
+    output:
+    <h1 id="header">Accessing Dom Elements</h1>
+
+
+2. `document.getElementsByTagName(name)` - Selects all HTML tags eg. `<p>` and returns NodeList of all elements that match the tagname passed.
 ```js
 
     let paragraphs = document.getElementsByTagName("p");
     console.log(paragraphs);
 ```
-3. document.getElementsByClassName(className) -  Selects all elements with class="box" and applies a gray background.
+    output:
+    HTMLCollection(2) [p, p]
+
+3. `document.getElementsByClassName(className)` -  Selects all elements with classname eg ` class="box" ` and returns a NodeList of all elements that match the class name passed.
 ```js
 
     let boxes = document.getElementsByClassName("box");
     console.log(boxes);
 ```
-4. document.querySelector(selector) - Selects the first .box element and adds a black border.
+    output:
+    HTMLCollection(3) [div.box, div.box, div.box]
+
+4. `document.querySelector(selector)` - Selects the first element that matches a specified css selector, id or tagname eg `.box` 
 ```js
     let firstBox = document.querySelector(".box");
     console.log(firstBox);
 ```
-5. document.querySelectorAll(selector) - Selects all elements with class="highlight" and changes the background color to yellow.
+    output:
+    <div class="box">Div with class box</div>
+
+5. `document.querySelectorAll(selector)` - Selects all elements with  class, id or tag name eg. `class="highlight"` and returns a  node list of them
 ```js
     let allHighlighted = document.querySelectorAll(".highlight");
     console.log(allHighlighted);
-}
 ```
+    output:
+    NodeList(1) [span.highlight]
