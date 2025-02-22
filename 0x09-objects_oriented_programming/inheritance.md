@@ -3,6 +3,7 @@ Inheritance allows one class to inheritance properties and methods from another 
 
 ```js
 class Animal {
+  //properties of parent class 
     constructor(numLegs, numEyes) {
       this.numLegs = numLegs;
       this.numEyes = numEyes;
@@ -17,7 +18,7 @@ class Animal {
       console.log(`Animal eating for survival`);
     }
   }
-  
+  //child class. inheritance done by `extends`
   class Cow extends Animal {
     constructor(numLegs, numEyes, breed, gender) {
       super(numLegs, numEyes); // calls the parent constructor
@@ -34,10 +35,9 @@ class Animal {
   myCow.move();
   myCow.eat();
   myCow.sound();
-```
-
-  output:
-  Animal looking at the road with 2 eyes
-  Animal moving with 4 legs
-  Animal eating for survival
-  The Male Guernsey cow is mooing
+  ```
+    output: // from animal methods
+    Animal looking at the road with 2 eyes 
+    Animal moving with 4 legs
+    Animal eating for survival
+    The Male Guernsey cow is mooing
