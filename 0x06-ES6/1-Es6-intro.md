@@ -1,0 +1,2 @@
+# ECMAScript,
+ -standardized by ECMA International, is the foundation of JavaScript. It evolves through successive versions, with major releases named after their release years. ES6 (2015) was a significant update, introducing new features, syntax improvements, and better functionality. ECMAScript maintains backward compatibility, ensuring older code runs on newer versions. This guide covers key ES6 features.
