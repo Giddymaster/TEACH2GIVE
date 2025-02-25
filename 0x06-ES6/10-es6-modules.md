@@ -1,160 +1,70 @@
-#  ES6 Modules
+# Object Literal Enhancements
+ES6 introduced several improvements to object literals, making object creation and manipulation more concise and readable.
 
-ES6 introduced a module system that enables JavaScript code to be divided into separate files, making it more structured, reusable, and easier to maintain.
+## Shorthand Property Names
+If the variable name matches the property name, you can omit the explicit assignment.
 
-Modules export and import functions, variables, or classes across different files.
+**Before ES6:**
 
-### Using ES6 Modules
-- In browsers, set the `<script>` tag’s `type` to `module`:
-  
-  ```html
-  <script type="module" src="app.js"></script>
-  ```
-  
-- In Node.js, add `"type": "module"` in `package.json` or use the `.mjs` extension.
+```javascript
+const firstName = "Gideon";
+const lastName = "Mwangi";
+const age = 30;
 
-## Exporting and Importing
-ES6 provides **named exports** and **default exports**.
-
-### Named Exports
-Exports multiple values from a module using the `export` keyword.
-
-**mathUtils.mjs:**
-```js
-export function multiply(x, y) {
-  return x * y;
-}
+const person = { firstName: firstName, lastName: lastName, age: age };
+console.log(person); // { firstName: 'Gideon', lastName: 'Mwangi', age: 30 }
 ```
 
-**app.mjs:**
-```js
-import { multiply } from "./mathUtils.mjs";
-console.log(multiply(4, 3)); // 12
+**After ES6:**
+
+```javascript
+const firstName = "Gideon";
+const lastName = "Mwangi";
+const age = 30;
+
+const person = { firstName, lastName, age };
+console.log(person); // { firstName: 'Gideon', lastName: 'Mwangi', age: 30 }
 ```
 
-### Aliases for Imports
-Rename imports using `as`.
+## Method Shorthand
+Methods can be defined without the `function` keyword.
 
-**mathUtils.mjs:**
-```js
-export function multiply(x, y) {
-  return x * y;
-}
+**Before ES6:**
+
+```javascript
+const person = {
+  firstName: "Gideon",
+  lastName: "Mwangi",
+  greet: function () {
+    console.log(`Hello, I'm ${this.firstName} ${this.lastName}.`);
+  },
+};
+person.greet();
 ```
 
-**app.mjs:**
-```js
-import { multiply as product } from "./mathUtils.mjs";
-console.log(product(4, 3)); // 12
+**After ES6:**
+
+```javascript
+const person = {
+  firstName: "Gideon",
+  lastName: "Mwangi",
+  greet() {
+    console.log(`Hello, I'm ${this.firstName} ${this.lastName}.`);
+  },
+};
+person.greet();
 ```
 
-### Default Exports
-Each module can have one default export, which can be imported without curly braces.
+## Computed Property Names
+Dynamic property names can be defined using expressions inside square brackets `[]`.
 
-**logger.mjs:**
-```js
-export default function logMessage(msg) {
-  console.log(`Message: ${msg}`);
-}
-```
+```javascript
+const key = "status";
 
-**app.mjs:**
-```js
-import logMessage from "./logger.mjs";
-logMessage("Hello, World!");
-```
+const profile = {
+  ["user" + "Name"]: "Gideon",
+  age: 30,
+  [key]: "Active",
+};
 
-**Output:**
-```js
-Message: Hello, World!
-```
-
-This system is based on exporting and importing functions, variables, or classes across different files.
-
-## Key Considerations for ES6 Modules
-
-When utilizing ES6 modules in a web browser, ensure that the _type_ attribute in the _<script>_ tag is set to _module_.
-
-```html
-<script type="module" src="app.js"></script>
-```
-
-For ES6 modules in Node.js:
-- Add "type": "module" to your `package.json` file.
-- Use the `.mjs` extension for module files.
-
-## Exporting and Importing in ES6 Modules
-
-ES6 provides two main ways to export content from a module: **named exports** and **default exports**.
-
-### Named Exports
-
-Named exports allow multiple values to be exported from a single module using the `export` keyword.
-
-**Example: Exporting a function from a file called `mathUtils.mjs` and importing it in `app.mjs`:**
-
-**mathUtils.mjs:**
-```js
-export function multiply(x, y) {
-  return x * y;
-}
-```
-
-**app.mjs:**
-```js
-import { multiply } from "./mathUtils.mjs";
-
-console.log(multiply(4, 3));
-```
-
-**Output:**
-```js
-12
-```
-
-### Assigning Aliases to Imports
-
-The `as` keyword allows renaming of imported modules for better readability or to avoid conflicts.
-
-**mathUtils.mjs:**
-```js
-export function multiply(x, y) {
-  return x * y;
-}
-```
-
-**app.mjs:**
-```js
-import { multiply as product } from "./mathUtils.mjs";
-
-console.log(product(4, 3));
-```
-
-**Output:**
-```js
-12
-```
-
-### Default Exports
-
-Each module can have only one default export, which can be imported using any name.
-
-**logger.mjs:**
-```js
-export default function logMessage(msg) {
-    console.log(`Message: ${msg}`);
-}
-```
-
-**app.mjs:**
-```js
-import logMessage from "./logger.mjs";
-
-logMessage("Hello, World!");
-```
-
-**Output:**
-```js
-Message: Hello, World!
-```
-
+console.log(profile); // { userName: 'Gideon', age: 30, status: 'Active' }
